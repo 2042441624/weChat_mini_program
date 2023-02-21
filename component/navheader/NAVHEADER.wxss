@@ -1,0 +1,10 @@
+/* component/navheader/NAVHEADER.wxss */
+.navheader{
+  width: 100%;
+  height: 30rpx;
+  padding: 10rpx 0;
+  font-size: 28rpx;
+}
+.navheader .right {
+  float: right;
+}

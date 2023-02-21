@@ -1,0 +1,70 @@
+<!--pages/index/index.wxml-->
+<view class="indexContainer">
+  <!-- 头部区域 -->
+  <view class="header">
+    <view class="search" bindtap="toSearch">
+      搜索音乐
+    </view>
+    <image src="/static/image/logo.png"></image>
+  </view>
+  <!-- 轮播图 -->
+  <swiper class="banners" indicator-dots>
+    <swiper-item wx:key='bannerId' wx:for="{{bannersList}}">
+      <image src="{{item.pic}}" mode="" />
+    </swiper-item>
+
+  </swiper>
+  <!-- 导航 -->
+  <view class="navContainer">
+    <view class="navItem" bindtap='toRecommend'>
+      <text class="iconfont icon-html"></text>
+      <text>每日推荐</text>
+    </view>
+    <view class="navItem">
+      <text class="iconfont icon-css"></text>
+      <text>CSS</text>
+    </view>
+    <view class="navItem">
+      <text class="iconfont icon-JavaScript"></text>
+      <text>JS</text>
+    </view>
+    <view class="navItem">
+      <text class="iconfont icon-Vue"></text>
+      <text>VUE</text>
+    </view>
+  </view>
+  <!-- 推荐歌单 -->
+  <view class="recommendedContainer">
+    <!-- 头部组件 -->
+    <navheader title='推荐歌单'></navheader>
+    <scroll-view class="recommendedScroll" enable-flex scroll-x>
+      <view class="recommendedContent">
+        <image></image>
+        <text>Html入门笔记,更块了解和复习</text>
+      </view>
+      <view class="recommendedContent" wx:key="id" wx:for="{{recommendList}}">
+        <image src="{{item.picUrl}}"></image>
+        <text>H{{item.name}}</text>
+      </view>
+    </scroll-view>
+  </view>
+  <!-- 排行榜 -->
+  <view class="topContainer">
+    <!-- 排行榜头部组件 -->
+    <navheader title='歌单排行榜'></navheader>
+    <!-- 排行榜歌单滚动容器 -->
+    <scroll-view class="topScroll" enable-flex scroll-x>
+      <!-- 排行榜歌单 -->
+      <view class="topList" wx:key='index' wx:for="{{topList}}" wx:for-item='titleItem'>
+        <navheader title='{{titleItem.name+">>>"}}' right=''></navheader>
+        <view class="songContainer" wx:key="index" wx:for="{{titleItem.tracks}}" wx:for-item='songItem'>
+          <image src="{{songItem.al.picUrl}}" mode="cover" />
+          <text>{{index}}</text>
+          <text class="name">{{songItem.name}}</text>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+  <!-- 底部导航 -->
+  
+</view>       

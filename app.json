@@ -1,0 +1,97 @@
+{
+  "lazyCodeLoading": "requiredComponents",
+  "pages": [
+    "pages/index/index",
+    "pages/video/video",
+    "pages/user/user"
+  ],
+  "subpackages": [
+    {
+      "root": "songPackage",
+      "pages": [
+        "songdetial/songdetail"
+      ]
+    },
+    {
+      "root": "userPackage",
+      "pages": [
+        "login/login"
+      ]
+    },
+    {
+      "root": "skipPackage",
+      "pages": [
+        "recommend/recommend",
+        "search/search"
+      ]
+    }
+  ],
+  "requiredBackgroundModes": [
+    "audio",
+    "location"
+  ],
+  "subpackages": [
+    {
+      "root": "skipPackage",
+      "pages": [
+        "recommend/recommend",
+        "search/search"
+      ]
+    },
+    {
+      "root": "songPackage",
+      "pages": [
+        "songdetail/songdetail"
+      ]
+    },
+    {
+      "root": "userPackage",
+      "pages": [
+        "login/login"
+      ]
+    }
+  ],
+  "preloadRule": {
+    "pages/index/index": {
+      "network": "all",
+      "packages": [
+        "skipPackage",
+        "songPackage",
+        "userPackage"
+      ]
+    }
+  },
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#F01919",
+    "navigationBarTitleText": "程序云",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#FFF",
+    "selectedColor": "#F01919",
+    "backgroundColor": "#FFF",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "static/image/tabs/tab-home.png",
+        "selectedIconPath": "static/image/tabs/tab-home-current.png"
+      },
+      {
+        "pagePath": "pages/video/video",
+        "text": "视频",
+        "iconPath": "static/image/tabs/select.png",
+        "selectedIconPath": "static/image/tabs/selected.png"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "用户",
+        "iconPath": "static/image/tabs/tab-my.png",
+        "selectedIconPath": "static/image/tabs/tab-my-current.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

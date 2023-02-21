@@ -1,0 +1,5 @@
+<!--component/navheader/NAVHEADER.wxml-->
+<view class="navheader">
+  <text class="title">{{title}}</text>
+  <text class="right">{{right}}</text>
+</view>
